@@ -1,0 +1,50 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <hudson.model.StringParameterDefinition>
+          <name>db_host</name>
+          <description></description>
+          <defaultValue>mysql-server</defaultValue>
+          <trim>false</trim>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>db_name</name>
+          <description></description>
+          <defaultValue>test_db</defaultValue>
+          <trim>false</trim>
+        </hudson.model.StringParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
+  </properties>
+  <scm class="hudson.scm.NullSCM"/>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <org.jvnet.hudson.plugins.SSHBuilder plugin="ssh@2.6.1">
+      <siteName>remote_user@centos-host:22</siteName>
+      <command>/tmp/db_backup.sh $db_host $db_passwd $db_name</command>
+      <execEachLine>false</execEachLine>
+      <hideCommand>false</hideCommand>
+    </org.jvnet.hudson.plugins.SSHBuilder>
+  </builders>
+  <publishers/>
+  <buildWrappers>
+    <org.jenkinsci.plugins.credentialsbinding.impl.SecretBuildWrapper plugin="credentials-binding@1.24">
+      <bindings>
+        <org.jenkinsci.plugins.credentialsbinding.impl.StringBinding>
+          <credentialsId>DB_PASSWORD</credentialsId>
+          <variable>db_passwd</variable>
+        </org.jenkinsci.plugins.credentialsbinding.impl.StringBinding>
+      </bindings>
+    </org.jenkinsci.plugins.credentialsbinding.impl.SecretBuildWrapper>
+  </buildWrappers>
+</project>

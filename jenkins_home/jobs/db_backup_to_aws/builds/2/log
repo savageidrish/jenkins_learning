@@ -1,0 +1,17 @@
+Started by user [8mha:////4AKaFII/IrI9p89Dm6cM53+6eCj+gvyw3Y/O3SBE40R2AAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzeEgZu/dLi1CL9xJTczDwACG0V4sAAAAA=[0mJenkins admin
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/db_backup_to_aws
+[SSH] script:
+db_host="mysql-server"
+db_name="test_db"
+db_passwd=**********
+
+/tmp/db_backup.sh $db_host $db_passwd $db_name
+
+[SSH] executing...
+Completed 1.8 KiB/1.8 KiB (13.7 KiB/s) with 1 file(s) remainingupload: ../../tmp/backup-12-13-46.sql to s3://jenkins-mysql-backup-idr/backup-12-13-46.sql
+
+[SSH] completed
+[SSH] exit-status: 0
+
+Finished: SUCCESS

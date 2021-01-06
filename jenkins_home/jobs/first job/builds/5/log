@@ -1,0 +1,7 @@
+Started by user [8mha:////4AKaFII/IrI9p89Dm6cM53+6eCj+gvyw3Y/O3SBE40R2AAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzeEgZu/dLi1CL9xJTczDwACG0V4sAAAAA=[0mJenkins admin
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/first job
+[first job] $ /bin/sh -xe /tmp/jenkins2852995509106090028.sh
++ echo Hello Zainab Mustafa Saify
+Hello Zainab Mustafa Saify
+Finished: SUCCESS
